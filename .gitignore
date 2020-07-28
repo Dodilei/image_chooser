@@ -1,3 +1,4 @@
 *.ipynb
 ChosenImages/
 _*/
+*.code-workspace

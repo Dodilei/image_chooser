@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 import time
 import os
 
-BASE_DIR = 'ChosenImages'
-
-def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
+def main(idir = None, sdir = None, rdir = None, delete = False, BASE_DIR='ChosenImages', **kwargs):
+    
     DIR = idir if idir else input('images directory: ')
     SAVE_DIR = sdir if sdir else input('saved images directory: ')
     REM_DIR = rdir if (rdir or delete) else input('removed images directory: ')

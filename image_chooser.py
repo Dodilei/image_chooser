@@ -15,14 +15,14 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
     SAVE_DIR = os.path.join(BASE_DIR, SAVE_DIR)
     REM_DIR = os.path.join(BASE_DIR, REM_DIR)
 
-    os.system(f'mkdir \'{SAVE_DIR}\'')
-    os.system(f'mkdir \'{REM_DIR}\'')
-    os.system(f'mkdir {os.path.join(BASE_DIR, "ERROR")}')
+    os.makedirs(SAVE_DIR, exist_ok=True)
+    os.makedirs(REM_DIR, exist_ok=True)
+    os.makedirs(os.path.join(BASE_DIR, "ERROR"), exist_ok=True)
     
     dirkeys = {}
     for key in kwargs:
         cdir = os.path.join(BASE_DIR, key)
-        os.system(f'mkdir \'{cdir}\'')
+        os.makedirs(cdir, exist_ok=True)
         dirkeys[kwargs[key]] = cdir
     
     dirkeys['#error'] = os.path.join(BASE_DIR, 'ERROR')

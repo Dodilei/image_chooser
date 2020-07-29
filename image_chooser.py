@@ -47,7 +47,7 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
 
         #if i < start: continue
 
-        if not extension(name, 'jpg', 'jpeg', 'png'): continue
+        if not extension(name, 'jpg', 'jpeg', 'png', 'gif'): continue
         im += 1
 
         image_path = os.path.join(DIR, name)

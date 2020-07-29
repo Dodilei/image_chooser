@@ -82,10 +82,6 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
         action = handle_action()
 
         if action == 'exit':
-            print(i, ' files read. ', 'Images chosen: ', im)
-            totaltime = round(time.time()-starttime, 2)
-            print('Time choosing: ', totaltime, 's')
-            print('Time per image', round(totaltime/im, 3), 's')
             break
 
         elif action == 'r':
@@ -108,7 +104,11 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
         os.system('mv \'{}\' \'{}\''.format(image_path, new_path))
         history.append(did)
     
-
+    clear_output()
+    print(i, ' files read. ', 'Images chosen: ', im)
+    totaltime = round(time.time()-starttime, 2)
+    print('Time choosing: ', totaltime, 's')
+    print('Time per image', round(totaltime/im, 3), 's')
         
 
 if __name__ == "__main__":

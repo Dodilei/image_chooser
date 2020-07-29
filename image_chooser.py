@@ -17,12 +17,13 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
 
     os.system(f'mkdir \'{SAVE_DIR}\'')
     os.system(f'mkdir \'{REM_DIR}\'')
-    os.system('mkdir ERROR')
+    os.system(f'mkdir {os.path.join(BASE_DIR, "ERROR")}')
     
     dirkeys = {}
     for key in kwargs:
-        os.system(f'mkdir \'{key}\'')
-        dirkeys[kwargs[key]] = os.path.join(BASE_DIR, key)
+        cdir = os.path.join(BASE_DIR, key)
+        os.system(f'mkdir \'{cdir}\'')
+        dirkeys[kwargs[key]] = cdir
     
     dirkeys['#error'] = os.path.join(BASE_DIR, 'ERROR')
 
@@ -106,6 +107,8 @@ def main(idir = None, sdir = None, rdir = None, delete = False, **kwargs):
 
         os.system('mv \'{}\' \'{}\''.format(image_path, new_path))
         history.append(did)
+    
+
         
 
 if __name__ == "__main__":

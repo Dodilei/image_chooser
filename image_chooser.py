@@ -5,7 +5,9 @@ import matplotlib.pyplot as plt
 import time
 import os
 
-def main(idir = None, sdir = None, rdir = None, delete = False, BASE_DIR='ChosenImages', **kwargs):
+def main(idir = None, sdir = None, rdir = None,
+         delete = False, remove='r',
+         BASE_DIR='ChosenImages', **kwargs):
     
     DIR = idir if idir else input('images directory: ')
     SAVE_DIR = sdir if sdir else input('saved images directory: ')
@@ -83,7 +85,7 @@ def main(idir = None, sdir = None, rdir = None, delete = False, BASE_DIR='Chosen
         if action == 'exit':
             break
 
-        elif action == 'r':
+        elif action == remove:
             did = f'Removed {name}'
 
             if delete:
